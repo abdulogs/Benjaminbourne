@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap);
+body,html{background-color:#dfdeda;margin:0;padding:0;font-family:Oswald,sans-serif;display:flex;justify-content:center;flex-direction:column;align-items:center;align-content:center}
+.navbar{font-size:20px;padding:10px}
+.navbar a{text-transform:uppercase;text-decoration:none;transition:all 5s ease}
+.navbar a .light{font-weight:lighter}
+.navbar a .bold{font-weight:bolder}
+.content{margin-top:80px;padding:0 10px}
+.content .cube-rows{display:flex;justify-content:space-between;flex-wrap:wrap}
+.content .cube-rows .cube-card{perspective:1000px;perspective-origin:10px -800px}
+.content .cube-rows .cube-card .cube{position:relative;width:160px;transform-style:preserve-3d}
+.content .cube-rows .cube-card .cube .cube-side{font-size:12px;position:absolute;width:160px;height:160px;color:#666;white-space:normal;text-align:justify;text-justify:inter-word;text-transform:uppercase;overflow:hidden;border:1px solid #ddd;line-height:12px;word-break:break-all}
+.content .cube-rows .cube-card .cube .cube-back{transform:translateZ(-100px) rotateY(180deg)}
+.content .cube-rows .cube-card .cube .cube-right{transform:rotateY(-270deg) translateX(100px);transform-origin:top right}
+.content .cube-rows .cube-card .cube .cube-left{transform:rotateY(270deg) translateX(-100px);transform-origin:center left}
+.content .cube-rows .cube-card .cube .cube-top{transform:rotateX(-90deg) translateY(-62px);transform-origin:top center}
+.content .cube-rows .cube-card .cube .cube-bottom{transform:rotateX(90deg) translateY(62px);transform-origin:bottom center}
+.content .cube-rows .cube-card .cube .cube-front{transform:translateZ(62px)}
+@keyframes spin{
+from{transform:rotateY(0)}
+to{transform:rotateY(360deg)}
+}
+.content .cube{animation:spin 5s infinite linear}
+.content .subscribe-form{margin-top:320px}
+.content .subscribe-form .heading{text-transform:uppercase;font-weight:400;margin:0;font-size:20px;text-align:center}
+.content .subscribe-form .form{display:flex;align-items:center;align-content:center;margin-top:10px}
+.content .subscribe-form .form .form-control{width:100%;background-color:transparent;padding:10px;outline:0;border:1px solid #222}
+.content .subscribe-form .form .form-control::placeholder{text-transform:uppercase;font-weight:700;color:#222;font-family:Oswald,sans-serif;font-size:18px}
+.footer{margin-top:30px;padding:10px}
+.footer span{transition:all 5s ease}
+.text-black{color:#000}
+.text-transparent{color:transparent}
+@media screen and (max-width:500px){
+.content{margin-top:120px}
+.content .cube-rows .cube-card .cube{width:80px}
+.content .cube-rows .cube-card .cube .cube-side{width:80px;height:80px}
+.content .cube-rows .cube-card .cube .cube-back{transform:translateZ(-100px) rotateY(180deg)}
+.content .cube-rows .cube-card .cube .cube-right{transform:rotateY(-270deg) translateX(100px)}
+.content .cube-rows .cube-card .cube .cube-left{transform:rotateY(270deg) translateX(-100px)}
+.content .cube-rows .cube-card .cube .cube-top{transform:rotateX(-90deg) translateY(18px)}
+.content .cube-rows .cube-card .cube .cube-bottom{transform:rotateX(90deg) translateY(-20px)}
+.content .cube-rows .cube-card .cube .cube-front{transform:translateZ(-20px)}
+.content .subscribe-form{margin-top:250px}
+.footer{position:fixed;bottom:10px}
+}

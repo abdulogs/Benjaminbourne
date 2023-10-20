@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+
+html,
+body {
+  background-color: #dfdeda;
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.navbar {
+  font-size: 20px;
+  padding: 10px;
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 5s ease;
+    .light {
+      font-weight: lighter;
+    }
+    .bold {
+      font-weight: bolder;
+    }
+  }
+}
+
+.content {
+  margin-top: 80px;
+  padding: 0 10px;
+  .cube-rows {
+    display: flex;
+    justify-content: space-between;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    .cube-card {
+      perspective: 1000px;
+      perspective-origin: 10px -800px;
+      .cube {
+        position: relative;
+        width: 160px;
+        transform-style: preserve-3d;
+        .cube-side {
+          font-size: 12px;
+          position: absolute;
+          width: 160px;
+          height: 160px;
+          color: #666;
+          white-space: normal;
+          text-align: justify;
+          text-justify: inter-word;
+          text-transform: uppercase;
+          overflow: hidden;
+          border: 1px solid #ddd;
+          line-height: 12px;
+          // background-color: #bbbbbb;
+          word-break: break-all;
+        }
+        .cube-back {
+          transform: translateZ(-100px) rotateY(180deg);
+        }
+        .cube-right {
+          transform: rotateY(-270deg) translateX(100px);
+          transform-origin: top right;
+        }
+        .cube-left {
+          transform: rotateY(270deg) translateX(-100px);
+          transform-origin: center left;
+        }
+        .cube-top {
+          transform: rotateX(-90deg) translateY(-62px);
+          transform-origin: top center;
+        }
+        .cube-bottom {
+          transform: rotateX(90deg) translateY(62px);
+          transform-origin: bottom center;
+          // background-color: #666;
+        }
+        .cube-front {
+          transform: translateZ(62px);
+        }
+      }
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotateY(0);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .cube {
+    animation: spin 5s infinite linear;
+  }
+  .subscribe-form {
+    margin-top: 320px;
+    .heading {
+      text-transform: uppercase;
+      font-weight: normal;
+      margin: 0;
+      font-size: 20px;
+      text-align: center;
+    }
+    .form {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      margin-top: 10px;
+      .form-control {
+        width: 100%;
+        background-color: transparent;
+        padding: 10px;
+        outline: none;
+        border: 1px solid #222;
+        &::placeholder {
+          text-transform: uppercase;
+          font-weight: bold;
+          color: #222;
+          font-family: "Oswald", sans-serif;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 30px;
+  padding: 10px;
+  span{
+    transition: all 5s ease;
+  }
+}
+
+.text-black {
+  color: #000;
+}
+.text-transparent {
+  color: transparent;
+}
+
+@media screen and (max-width: 1030px) {
+}
+@media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 500px) {
+  .content {
+    margin-top: 120px;
+    .cube-rows {
+      .cube-card {
+        .cube {
+          width: 80px;
+          .cube-side {
+            width: 80px;
+            height: 80px;
+            // background-color: #666;
+          }
+          .cube-back {
+            transform: translateZ(-100px) rotateY(180deg);
+          }
+          .cube-right {
+            transform: rotateY(-270deg) translateX(100px);
+          }
+          .cube-left {
+            transform: rotateY(270deg) translateX(-100px);
+          }
+          .cube-top {
+            transform: rotateX(-90deg) translateY(18px);
+          }
+          .cube-bottom {
+            transform: rotateX(90deg) translateY(-20px);
+          }
+          .cube-front {
+            transform: translateZ(-20px);
+          }
+        }
+      }
+    }
+
+    .subscribe-form {
+      margin-top: 250px;
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+}
+@media screen and (max-width: 400px) {
+}
+@media screen and (max-width: 300px) {
+}
